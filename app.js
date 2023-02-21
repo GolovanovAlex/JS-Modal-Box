@@ -2,7 +2,8 @@
 const modal = document.querySelector('.box'),
   overlay = document.querySelector('.overlay'),
   modalBtn = document.querySelector('.btn-modal'),
-  closeBtn = document.querySelector('.modal__button--close');
+  yesBtn = document.querySelector('.modal__button--yes');
+closeBtn = document.querySelector('.modal__button--no');
 
 // ---- ---- Open Modal ---- ---- //
 modalBtn.addEventListener('click', () => {
@@ -10,6 +11,9 @@ modalBtn.addEventListener('click', () => {
 });
 // ---- ---- Close Modal ---- ---- //
 closeBtn.addEventListener('click', () => {
+  modal.classList.remove('active');
+});
+yesBtn.addEventListener('click', () => {
   modal.classList.remove('active');
 });
 // ---- ---- Close Modal Overlay---- ---- //
