@@ -13,15 +13,17 @@ body {
   align-items: center;
 }
 .box {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.btn-modal {
-  font-size: 20px;
+.btn {
+  font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 20px 40px;
+  padding: 15px 40px;
   background-color: #010101;
   border: 2px solid #010101;
   border-radius: 6px;
@@ -32,19 +34,47 @@ body {
 .btn-modal:hover {
   background-color: #4169e1;
 }
+.box.active .btn-modal {
+  display: none;
+}
 .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
-  /* opacity: 0; */
-  opacity: 1;
+  opacity: 0;
 }
 .modal__box {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 40px;
+  background-color: #fefefe;
+  border-radius: 16px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
-.box.avtive .overlay {
+.modal__title,
+.modal__text {
+  margin-bottom: 20px;
+}
+.box.active .overlay,
+.box.active .modal__box {
   opacity: 1;
   pointer-events: auto;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
